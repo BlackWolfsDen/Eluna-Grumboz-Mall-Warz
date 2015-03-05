@@ -21,6 +21,8 @@ how-to install:
 	* add the area id to the Zone_MALL.Area table.
 	* add the x,y,z,o to the flag_loc table.
 		* flag_loc = {x, y, z, o}
+	* spawn 3 the flags.
+
 3. Add you vendors.
 	* this comes with a template for vendors.
 
