@@ -24,7 +24,7 @@ local maximum_flag_spawn_delay = 300; -- max flag spawn delay in minutes. defaul
 local FlagAnn = 1; -- announce to world when flag spawns. 0/1 on/off no/yes.
 local flag_id = 800000; -- (ally, horde, zone)
 local time = 1000;
-local set_flag_cmd = "store mall flag";
+local set_flag_cmd = "spawn mall flags";
 local Flag = {};
 
 local NPC = {1000000,}; -- add id's here for vendors you want to add to this Zone. e.g. NPC = {100, 101, 102, 103, 108, 231, 6767};
