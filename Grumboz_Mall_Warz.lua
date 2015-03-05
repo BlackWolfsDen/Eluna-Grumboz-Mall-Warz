@@ -171,12 +171,6 @@ end
  
 RegisterPlayerEvent(27, Message)
 
-if(Mall == 1)then
-	for flag_start_spawn=flag_id, flag_id+2 do
-		PerformIngameSpawn(2, flag_start_spawn, Zone_MALL.Map, 0, flag_loc[1], flag_loc[2], flag_loc[3], flag_loc[4]);
-	end
-end
-
 if(Mall == 0)then
 	print("*        Idle        *")
 end
