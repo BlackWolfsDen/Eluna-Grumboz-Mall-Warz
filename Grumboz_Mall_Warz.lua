@@ -28,11 +28,11 @@ local Flag = {};
 
 local NPC = {1000000,}; -- add id's here for vendors you want to add to this Zone. e.g. NPC = {100, 101, 102, 103, 108, 231, 6767};
 local Zone_MALL = { --  default setup GM Island :: edit Name, Map, Zone, and Area to change the mall location.
-		Name = "GM Island Custom Battle Mall", -- <-- zone name
+		Name = "GM Island Custom Battle Mall", -- <-- zone name for announcements
 		Map = 1, -- <-- map id
 		Zone = 876, -- <-- zone id
 		Area = 876, -- <-- area id
-		Team = 3, -- <-- default value.
+		Team = 3, -- <-- default value 3.
 			Team_Name = { -- for annoucements
 				[0] = "Alliance",
 				[1] = "Horde",
