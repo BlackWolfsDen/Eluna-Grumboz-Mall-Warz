@@ -24,6 +24,7 @@ local maximum_flag_spawn_delay = 300; -- max flag spawn delay in minutes. defaul
 local FlagAnn = 1; -- announce to world when flag spawns. 0/1 on/off no/yes.
 local flag_id = 800000; -- (ally, horde, zone)
 local time = 1000;
+local set_flag_cmd = "store mall flag";
 local Flag = {};
 
 local NPC = {1000000,}; -- add id's here for vendors you want to add to this Zone. e.g. NPC = {100, 101, 102, 103, 108, 231, 6767};
@@ -170,6 +171,24 @@ local function Message(event, player)
 end
  
 RegisterPlayerEvent(27, Message)
+
+local function SetFlags(event, player, command)
+
+	if(command == set_flag_cmd)then
+
+		local m = player:GetMapId();
+		local x = player:GetX();
+		local y = player:GetY();
+		local z = player:GetZ();
+		local o = player:GetO();
+		
+			for flg=0,3 do
+				PerformIngameSpawn(2, (flag_id+flg), m, 0, x, y, z, o, 1, 0, 1);
+			end
+	end
+end
+
+RegisterPlayerEvent(42, SetFlags) 
 
 if(Mall == 0)then
 	print("*        Idle        *")
