@@ -19,13 +19,12 @@ print("* Grumbo'z Mall Warz *")
 
 local Mall = 1; -- system operation switch. 0=system off/1=system on.
 local Advertise = 5; -- how often in minutes to announce to world about this. float values work.
-local minimum_flag_spawn_delay = 60; -- minimum flag spawn delay in seconds. default 1 minute.
-local maximum_flag_spawn_delay = 300; -- max flag spawn delay in minutes. default (300 seconds/5 minutes).
+local minimum_flag_spawn_delay = 60; -- minimum flag spawn delay in seconds. default (60 seconds) = 1 minute.
+local maximum_flag_spawn_delay = 300; -- max flag spawn delay in minutes. default (300 seconds) = 5 minutes.
 local FlagAnn = 1; -- announce to world when flag spawns. 0/1 on/off no/yes.
 local flag_id = 800000; -- (ally, horde, zone)
 local time = 1000;
 local Flag = {};
-local ann = nil;
 
 local NPC = {1000000,}; -- add id's here for vendors you want to add to this Zone. e.g. NPC = {100, 101, 102, 103, 108, 231, 6767};
 local Zone_MALL = { --  default setup GM Island :: edit Name, Map, Zone, and Area to change the mall location.
@@ -41,8 +40,7 @@ local Zone_MALL = { --  default setup GM Island :: edit Name, Map, Zone, and Are
 				[2] = "World",
 			},
 };
-local flag_loc = {16254.402344, 16233.352539, 33.784611, 2.981301}; -- {x, y, z,  o} edit x, y, z to change the flag spawn location.
-
+local flag_loc = {16213.000977, 16270.836914, 13.099594, 5.456899}; -- {x, y, z,  o} edit x, y, z to change the flag spawn location.
 local Team_Color = {
 			[0] = "|cff00FFFF", -- Alliance Blue
 			[1] = "|cffFF0000", -- Horde Red

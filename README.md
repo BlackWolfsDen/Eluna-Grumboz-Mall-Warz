@@ -16,21 +16,23 @@ how-to install:
 
 2. choose your map/zone and flag spawning location.
 
-	add the map id to the Zone_MALL table.
-	add the zone id to the Zone_MALL table.
-	add the x,y,z,o to the flag_loc table.
-
+	* add the map id to the Zone_MALL.Map table.
+	* add the zone id to the Zone_MALL.Zone table.
+	* add the area id to the Zone_MALL.Area table.
+	* add the x,y,z,o to the flag_loc table.
+		* flag_loc = {x, y, z, o}
 3. Add you vendors.
+	* this comes with a template for vendors.
 
-	add the id for each vendor to NPC table.
-		e.g.{xxx, xxy, xxz, xyx, xyy, xyz,}.
+	1. add the id for each vendor to NPC table.
+		* e.g. NPC = {100, 101, 102, 103, 108, 231, 6767};.
+			
 
-	set the faction of each vendor to 16.
-		this will make all the vendors enemy to both teams
-		untill a team captures the zone flag.
-		Vendors WILL attack any player from an apposing team.
-		If you want your vnedors to attack then set unit_flags
-		to `0` and beef up your vendors attack spec's for some fun.
+	2. set the faction of each vendor to 16.
+		* this will make all the vendors enemy to both teams
+		* untill a team captures the zone flag.
+		* If you want your vendors to attack intruders then set unit_flags
+		* to `0` and beef up your vendors attack spec's for some fun.
 
 4. restart and enjoy !!Blood n Death!!
 
