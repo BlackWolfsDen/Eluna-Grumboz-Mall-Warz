@@ -3,6 +3,7 @@ REPLACE INTO `gameobject_template` (`entry`, `type`, `displayId`, `name`, `IconN
 (800001,10,5652, 'Horde Mall Flag', 'interact', '', '',84,0,3,0),
 (800002,10,7953, 'Neutral Mall Flag', 'interact', '', '',35,0,6,3000);
 
+-- VENDOR TEMPLATE BELOW --
 -- if you want the vendors to be able to attack then set unit_flags to `0`.
 REPLACE INTO `creature_template` (`entry`, `modelid1`, `name`, `subname`, `IconName`, `minlevel`, `maxlevel`, `faction_A`, `faction_H`, `npcflag`, `speed_walk`, `speed_run`, `scale`, `dmg_multiplier`, `unit_class`,`unit_flags`, `InhabitType`) VALUES 
 (1000000, 28545, 'Vendor', 'Mall Warz', 'buy', 80, 80, 16, 16, 128, 1, 1.14286, 1, 1, 1, 7, 3);
