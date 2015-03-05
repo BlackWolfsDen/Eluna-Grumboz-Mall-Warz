@@ -33,7 +33,6 @@ local Zone_MALL = { --  default setup GM Island :: edit Name, Map, Zone, and Are
 		Zone = 876, -- <-- zone id
 		Area = 876, -- <-- area id
 		Team = 3, -- <-- default value.
-		Guid = 302590, -- <-- enter the guidlow of your Zone Flag.
 			Team_Name = { -- for annoucements
 				[0] = "Alliance",
 				[1] = "Horde",
