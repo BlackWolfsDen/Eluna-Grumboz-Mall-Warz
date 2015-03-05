@@ -19,8 +19,6 @@ how-to install:
 	* add the map id to the Zone_MALL.Map table.
 	* add the zone id to the Zone_MALL.Zone table.
 	* add the area id to the Zone_MALL.Area table.
-	* add the x,y,z,o to the flag_loc table.
-		* flag_loc = {x, y, z, o}
 	* spawn 3 the flags by typing "/say spawn mall flags" in-game.
 	  * 3 flags will appear but 2 of them will de-spawn while 1 remains visible.
 	    * 1 flag based on the controlling team's id will allways be visible.
