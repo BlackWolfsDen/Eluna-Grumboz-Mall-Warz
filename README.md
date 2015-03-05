@@ -4,9 +4,12 @@
 ## Introduction
 
 for TrinityCore2 3.3.5a with Eluna.
-some assembly required.
-Blood not included.
+ 
+ Some assembly required.
+ 
+ Blood not included.
 
+---------------------------------
 how-to install:
 
 1. Grind the sql file into your world db.
