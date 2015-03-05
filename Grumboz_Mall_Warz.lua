@@ -3,7 +3,7 @@
 -- project start date 01/09/15 :|©|: project finish date 01/09/15
 -- with blood and death n stuff..©
 -- another portable `Capture The Zone` system from the Mad Scientist of EmuDevs.com ©
--- For Trinity Core2 3.3.5a
+-- For Trinity Core2 with Eluna.
 -- Custom Creation FOR Public RELEASE 03/05/2015 ©
 -- Required skill level beginner+ . light variable, and 3d table editing.
 -- npc's will be friendly ONLY with the team that holds the flag.
