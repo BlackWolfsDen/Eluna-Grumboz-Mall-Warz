@@ -40,7 +40,6 @@ local Zone_MALL = { --  default setup GM Island :: edit Name, Map, Zone, and Are
 				[2] = "World",
 			},
 };
-local flag_loc = {16213.000977, 16270.836914, 13.099594, 5.456899}; -- {x, y, z,  o} edit x, y, z to change the flag spawn location.
 local Team_Color = {
 			[0] = "|cff00FFFF", -- Alliance Blue
 			[1] = "|cffFF0000", -- Horde Red
