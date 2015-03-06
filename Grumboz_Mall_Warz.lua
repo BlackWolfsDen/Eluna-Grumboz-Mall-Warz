@@ -69,8 +69,6 @@ end
 
 local function SpawnTeamFlag()
 
-local x, y, z, o = table.unpack(flag_loc)-- unpacks the table for team flag
-
 Flag[Zone_MALL.Team-1]:Respawn()
 Zone_MALL.Guid = Flag[Zone_MALL.Team-1]:GetGUIDLow();
 SendWorldMessage(" The "..Zone_MALL.Team_Name[Zone_MALL.Team-1].." Mall Flag has been spawned.");
