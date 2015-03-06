@@ -10,9 +10,6 @@
 -- when you setup this make sure the tele points for the mall are far 
 -- enough away from npc's so they wont attack any players who teleport.
 -- Team flag will respawn randomly. based on preset minimum and maximum timers.
--- find a location you wish to have your flags spawn and store the gps to table:flag_loc.
--- you then spawn your starter Zone flag id:800002 at the same GPS coordinates. this flag is permanant
--- and if you choose to move your system then you must delete this gameobject.
 
 print("**********************")
 print("* Grumbo'z Mall Warz *")
