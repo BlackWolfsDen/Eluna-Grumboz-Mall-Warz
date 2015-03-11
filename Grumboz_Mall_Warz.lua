@@ -104,15 +104,21 @@ end
 
 local function ReFreshNPCFaction(event, unit)
 
-	if(Zone_MALL.Team == 3)then
+local map = unit:GetMapId();
+local zone = unit:GetZoneId();
+local area = unit:GetAreaId();
 
-		unit:SetFaction(16) -- 16 is creature . so agro to both teams.
-	else
+	if(Zone_MALL.Map == map)and(Zone_MALL.Zone == zone)and(Zone_MALL.Area == area)then
 
-		local faction = (83+GetApposingTeam(Zone_MALL.Team-1));
-		unit:SetFaction(faction); -- sets faction so npc is friendly to only 1 team.
+		if(Zone_MALL.Team == 3)then
+	
+			unit:SetFaction(16) -- 16 is creature . so agro to both teams.
+		else
+	
+			local faction = (83+GetApposingTeam(Zone_MALL.Team-1));
+			unit:SetFaction(faction); -- sets faction so npc is friendly to only 1 team.
+		end
 	end
-
 end
 
 if(Mall == 1)then
