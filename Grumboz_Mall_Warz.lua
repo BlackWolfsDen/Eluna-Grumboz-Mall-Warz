@@ -34,6 +34,7 @@ local Zone_MALL = { --  default setup GM Island :: edit Name, Map, Zone, and Are
 		Map = 1, -- <-- map id
 		Zone = 876, -- <-- zone id
 		Area = 876, -- <-- area id
+-- DO NOT EDIT ANYTHING BELOW UNLESS YOU KNOW WHAT YOU ARE DOING BUT NOTHING NEEDS EDITING BELOW THIS MARKER --
 		Team = 3, -- <-- default value 3.
 			Team_Name = { -- for annoucements
 				[0] = "Alliance",
