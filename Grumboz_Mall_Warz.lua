@@ -3,13 +3,16 @@
 -- project start date 01/09/15 :|©|: project finish date 01/09/15
 -- with blood and death n stuff..©
 -- another portable `Capture The Zone` system from the Mad Scientist of EmuDevs.com ©
--- For Trinity Core2 with Eluna.
+-- For Trinity Core2 3.3.5a
 -- Custom Creation FOR Public RELEASE 03/05/2015 ©
 -- Required skill level beginner+ . light variable, and 3d table editing.
 -- npc's will be friendly ONLY with the team that holds the flag.
 -- when you setup this make sure the tele points for the mall are far 
 -- enough away from npc's so they wont attack any players who teleport.
 -- Team flag will respawn randomly. based on preset minimum and maximum timers.
+-- find a location you wish to have your flags spawn and store the gps to table:flag_loc.
+-- you then spawn your starter Zone flag id:800002 at the same GPS coordinates. this flag is permanant
+-- and if you choose to move your system then you must delete this gameobject.
 
 print("**********************")
 print("* Grumbo'z Mall Warz *")
@@ -17,11 +20,12 @@ print("* Grumbo'z Mall Warz *")
 local Mall = 1; -- system operation switch. 0=system off/1=system on.
 local Advertise = 5; -- how often in minutes to announce to world about this. float values work.
 local minimum_flag_spawn_delay = 60; -- minimum flag spawn delay in seconds. default (60 seconds) = 1 minute.
-local maximum_flag_spawn_delay = 300; -- max flag spawn delay in minutes. default (300 seconds) = 5 minutes.
+local maximum_flag_spawn_delay = 900; -- max flag spawn delay in minutes. default (300 seconds) = 5 minutes.
 local FlagAnn = 1; -- announce to world when flag spawns. 0/1 on/off no/yes.
+local Global = 0; -- Effect vendors in WHOLE REALM=(1) :: or effect vendors in pre-specified location=(0) :: use (1) If your mall spans across more than 1 erea.
 local flag_id = 800000; -- (ally, horde, zone)
 local time = 1000;
-local set_flag_cmd = "spawn mall flags";
+local set_flag_cmd = "store mall flag";
 local Flag = {};
 
 local NPC = {1000000,}; -- add id's here for vendors you want to add to this Zone. e.g. NPC = {100, 101, 102, 103, 108, 231, 6767};
@@ -108,7 +112,7 @@ local map = unit:GetMapId();
 local zone = unit:GetZoneId();
 local area = unit:GetAreaId();
 
-	if(Zone_MALL.Map == map)and(Zone_MALL.Zone == zone)and(Zone_MALL.Area == area)then
+	if(Global == 1)or((Gmap == Zone_MALL.Map)and(Gzone == Zone_MALL.Zone)and(Garea == Zone_MALL.Area))then
 
 		if(Zone_MALL.Team == 3)then
 	
@@ -134,7 +138,7 @@ local Gmap = go:GetMapId();
 local Gzone = go:GetZoneId();
 local Garea = go:GetAreaId();
 
-	if((Gmap == Zone_MALL.Map)and(Gzone == Zone_MALL.Zone)and(Garea == Zone_MALL.Area))then
+	if(Global == 1)or((Gmap == Zone_MALL.Map)and(Gzone == Zone_MALL.Zone)and(Garea == Zone_MALL.Area))then
 		
 		Flag[go:GetEntry()-flag_id] = go;
 
