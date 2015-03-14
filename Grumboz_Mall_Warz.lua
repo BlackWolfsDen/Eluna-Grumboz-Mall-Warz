@@ -34,7 +34,7 @@ local Zone_MALL = { --  default setup GM Island :: edit Name, Map, Zone, and Are
 		Map = 1, -- <-- map id
 		Zone = 876, -- <-- zone id
 		Area = 876, -- <-- area id
--- DO NOT EDIT ANYTHING BELOW UNLESS YOU KNOW WHAT YOU ARE DOING BUT NOTHING NEEDS EDITING BELOW THIS MARKER --
+-- DO NOT EDIT ANYTHING BELOW UNLESS YOU KNOW WHAT YOU ARE DOING BUT NOTHING NEEDS EDITING BELOW THIS MARKER ECCEPT TEAM COLORS LINE 45 --
 		Team = 3, -- <-- default value 3.
 			Team_Name = { -- for annoucements
 				[0] = "Alliance",
@@ -43,8 +43,8 @@ local Zone_MALL = { --  default setup GM Island :: edit Name, Map, Zone, and Are
 			},
 };
 local Team_Color = {
-			[0] = "|cff00FFFF", -- Alliance Blue
-			[1] = "|cffFF0000", -- Horde Red
+			[0] = "|cff00FFFF", -- Alliance Blue EDITABLE
+			[1] = "|cffFF0000", -- Horde Red EDITABLE
 };
 
 local function WorldAnnounce() -- world announcement for advertising
