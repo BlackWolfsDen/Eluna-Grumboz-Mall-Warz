@@ -24,17 +24,15 @@ how-to install:
 	    * 1 flag will allways be visible representing the controlling team.
 
 3. Add you vendors.
-	* this comes with a template for vendors.
 
 	1. add the id for each vendor to NPC table.
 		* e.g. NPC = {100, 101, 102, 103, 108, 231, 6767};.
 			
 
-	2. set the faction of each vendor to 16.
-		* this will make all the vendors enemy to both teams
-		* untill a team captures the zone flag.
-		* If you want your vendors to attack intruders then set unit_flags
+	2. set the flags of each vendor:
+		* If you want your vendors to attack intruders then set `unit_flags`
 		* to `0` and beef up your vendors attack spec's for some fun.
+		* set `unit_flags` to '0' so vendors wont attack intruders.
 
 4. restart and enjoy !!Blood n Death!!
 
