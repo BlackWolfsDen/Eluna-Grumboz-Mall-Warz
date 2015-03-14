@@ -32,7 +32,7 @@ how-to install:
 	2. set the flags of each vendor:
 		* If you want your vendors to attack intruders then set `unit_flags`
 		* to `0` and beef up your vendors attack spec's for some fun.
-		* set `unit_flags` to '0' so vendors wont attack intruders.
+		* set `unit_flags` to '2' so vendors wont attack intruders.
 
 4. restart and enjoy !!Blood n Death!!
 
