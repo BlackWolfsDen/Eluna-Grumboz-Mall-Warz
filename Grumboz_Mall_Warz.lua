@@ -22,7 +22,7 @@ local Advertise = 5; -- how often in minutes to announce to world about this. fl
 local minimum_flag_spawn_delay = 60; -- minimum flag spawn delay in seconds. default (60 seconds) = 1 minute.
 local maximum_flag_spawn_delay = 900; -- max flag spawn delay in minutes. default (300 seconds) = 5 minutes.
 local FlagAnn = 1; -- announce to world when flag spawns. 0/1 on/off no/yes.
-local Global = 0; -- Effect vendors in WHOLE REALM=(1) :: or effect vendors in pre-specified location=(0) :: use (1) If your mall spans across more than 1 erea.
+local Global = 0; -- Effect vendors in WHOLE REALM=(1) :: or effect vendors in pre-specified location=(0) :: use (1) If your mall spans across more than 1 erea or if you just want them to be controlled ALL OVER.
 local flag_id = 800000; -- (ally, horde, zone)
 local time = 1000;
 local set_flag_cmd = "store mall flag";
