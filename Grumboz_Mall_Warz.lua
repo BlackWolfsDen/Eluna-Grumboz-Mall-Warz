@@ -70,9 +70,9 @@ end
 
 local function SpawnTeamFlag()
 
-Flag[Zone_MALL.Team-1]:Respawn()
-Zone_MALL.Guid = Flag[Zone_MALL.Team-1]:GetGUIDLow();
-SendWorldMessage(" The "..Zone_MALL.Team_Name[Zone_MALL.Team-1].." Mall Flag has been spawned.");
+Flag[Zone_MALL.Team]:Respawn()
+Zone_MALL.Guid = Flag[Zone_MALL.Team]:GetGUIDLow();
+SendWorldMessage(" The "..Zone_MALL.Team_Name[Zone_MALL.Team].." Mall Flag has been spawned.");
 
 end
 
@@ -83,19 +83,19 @@ local team_id = player:GetTeam();
 local not_team_id = GetApposingTeam(team_id)
 local team_name = GetTeamName(team_id);
 
-	go:Despawn()	
+	go:Despawn();	
 
 	if(Tguid == go:GetGUIDLow())then
 
-		Zone_MALL.Guid = 0;
-		Zone_MALL.Team = team_id+1;
+		Zone_MALL.Guid = nil;
+		Zone_MALL.Team = team_id;
 		
 			if(minimum_flag_spawn_delay > 0)and(maximum_flag_spawn_delay > 0)then
 				time = (math.random(minimum_flag_spawn_delay, maximum_flag_spawn_delay)*1000)
 			else
 				time = 1000;
 			end
-		SendWorldMessage("The "..Team_Color[Zone_MALL.Team-1]..""..Zone_MALL.Team_Name[Zone_MALL.Team-1].."|r have claimed the "..Zone_MALL.Name..".")
+		SendWorldMessage("The "..Team_Color[Zone_MALL.Team]..""..Zone_MALL.Team_Name[Zone_MALL.Team].."|r have claimed the "..Zone_MALL.Name..".")
 		CreateLuaEvent(SpawnTeamFlag, time, 1)
 	end
 end
@@ -109,18 +109,18 @@ end
 
 local function ReFreshNPCFaction(event, unit)
 
-local map = unit:GetMapId();
-local zone = unit:GetZoneId();
-local area = unit:GetAreaId();
+local Gmap = unit:GetMapId();
+local Gzone = unit:GetZoneId();
+local Garea = unit:GetAreaId();
 
 	if(Global == 1)or((Gmap == Zone_MALL.Map)and(Gzone == Zone_MALL.Zone)and(Garea == Zone_MALL.Area))then
 
-		if(Zone_MALL.Team == 3)then
-	
+		if(Zone_MALL.Team == 2)then
+
 			unit:SetFaction(16) -- 16 is creature . so agro to both teams.
 		else
 	
-			local faction = (83+GetApposingTeam(Zone_MALL.Team-1));
+			local faction = (83+GetApposingTeam(Zone_MALL.Team));
 			unit:SetFaction(faction); -- sets faction so npc is friendly to only 1 team.
 		end
 	end
@@ -129,6 +129,7 @@ end
 if(Mall == 1)then
 
 	for rfs=1,#NPC do
+		RegisterCreatureEvent(NPC[rfs], 5, ReFreshNPCFaction)
 		RegisterCreatureEvent(NPC[rfs], 27, ReFreshNPCFaction)
 	end
 end 
@@ -138,19 +139,35 @@ local function GO_LOS(event, go)
 local Gmap = go:GetMapId();
 local Gzone = go:GetZoneId();
 local Garea = go:GetAreaId();
+local Fteam_id = go:GetEntry()-flag_id;
 
 	if(Global == 1)or((Gmap == Zone_MALL.Map)and(Gzone == Zone_MALL.Zone)and(Garea == Zone_MALL.Area))then
 		
-		Flag[go:GetEntry()-flag_id] = go;
-
-		if((Zone_MALL.Team-1)~=(go:GetEntry()-flag_id))then
+		Flag[Fteam_id] = go;
+		
+		if(Zone_MALL.Team == 2)and(Fteam_id == Zone_MALL.Team)then
+		
+			Zone_MALL.Guid = go:GetGUIDLow();
+			
+				if not(go:IsSpawned())then
+					go:Respawn();
+				end
+		end
+		
+		if(Zone_MALL.Team ~= Fteam_id)then
 			
 			if(go:IsSpawned())then
 				go:Despawn()
 			end
 		else
-			Zone_MALL.Guid = go:GetGUIDLow();
+			if(Zone_MALL.Team == Fteam_id)and(Zone_MALL.Guid == go:GetGUIDLow())then
+			
+				if not(go:IsSpawned())then
+					go:Respawn();
+				end
+			end
 		end
+
 	end
 end
 
