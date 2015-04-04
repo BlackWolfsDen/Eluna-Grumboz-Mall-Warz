@@ -28,6 +28,10 @@ local time = 1000;
 local set_flag_cmd = "store mall flag";
 local Flag = {};
 
+local Team_Color = {
+			[0] = "|cff00FFFF", -- Alliance Blue EDITABLE
+			[1] = "|cffFF0000", -- Horde Red EDITABLE
+};
 local NPC = {1000000,}; -- add id's here for vendors you want to add to this Zone. e.g. NPC = {100, 101, 102, 103, 108, 231, 6767};
 local Zone_MALL = { --  default setup GM Island :: edit Name, Map, Zone, and Area to change the mall location.
 		Name = "GM Island Custom Battle Mall", -- <-- zone name for announcements
@@ -41,10 +45,6 @@ local Zone_MALL = { --  default setup GM Island :: edit Name, Map, Zone, and Are
 				[1] = "Horde",
 				[2] = "World",
 			},
-};
-local Team_Color = {
-			[0] = "|cff00FFFF", -- Alliance Blue EDITABLE
-			[1] = "|cffFF0000", -- Horde Red EDITABLE
 };
 
 local function WorldAnnounce() -- world announcement for advertising
