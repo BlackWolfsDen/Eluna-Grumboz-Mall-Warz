@@ -23,7 +23,7 @@ how-to install:
 	  * 3 flags will appear but 2 of them will de-spawn while 1 remains visible.
 	    * 1 flag will allways be visible representing the controlling team.
 
-3. Add you vendors.
+3. Add your vendors.
 
 	1. add the id for each vendor to NPC table.
 		* e.g. NPC = {100, 101, 102, 103, 108, 231, 6767};.
@@ -38,3 +38,4 @@ how-to install:
 
 By
 slp13at420
+I..AM..Grumbo!!
